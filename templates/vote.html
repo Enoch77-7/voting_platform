@@ -1,0 +1,76 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Cast Your Vote | Voting Platform</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+
+<body>
+
+    <div class="page-container">
+
+        <div class="form-card">
+
+            <div class="logo">Voting Platform</div>
+
+            <h1>Cast Your Vote</h1>
+
+            <p class="subtitle">
+                Choose your preferred candidate below.
+            </p>
+
+            {% if message %}
+                <div class="message">{{ message }}</div>
+            {% endif %}
+
+            <form action="/vote" method="POST">
+
+               
+{% for candidate in candidates %}
+
+    <label class="candidate-card">
+
+        <div class="candidate-option">
+
+            <input
+                type="radio"
+                name="candidate_id"
+                value="{{ candidate.id }}"
+                required
+            >
+
+            <span class="candidate-name">
+                {{ candidate.name }}
+            </span>
+
+        </div>
+
+        <p class="candidate-description">
+            {{ candidate.description }}
+        </p>
+
+    </label>
+
+{% endfor %}
+  
+                <button type="submit" class="btn">
+                    Submit Vote
+                </button>
+
+            </form>
+
+            <p class="footer-text">
+                <a href="/results">View Election Results</a>
+            </p>
+
+            <p class="footer-text">
+                <a href="/logout">Logout</a>
+            </p>
+
+        </div>
+
+    </div>
+
+</body>
+</html>

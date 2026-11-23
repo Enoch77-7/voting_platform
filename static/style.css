@@ -1,0 +1,308 @@
+
+/* GENERAL SETTINGS */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background: #F3F5F9;
+    color: #17191F;
+    line-height: 1.6;
+}
+
+/* PAGE LAYOUT */
+.page-container {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 20px;
+}
+
+/* FORM CARD */
+.form-card {
+    background: #FFFFFF;
+    width: 100%;
+    max-width: 480px;
+    padding: 42px;
+    border-radius: 18px;
+    border: 1px solid #E5E9F0;
+    box-shadow: 0 15px 45px rgba(0, 0, 0, 0.06);
+}
+
+/* HEADINGS */
+.logo {
+    color: #246BFD;
+    font-size: 14px;
+    font-weight: 800;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 28px;
+}
+
+h1 {
+    font-size: 30px;
+    color: #101114;
+    margin-bottom: 8px;
+}
+
+h2 {
+    font-size: 22px;
+    margin-bottom: 15px;
+}
+
+h3 {
+    font-size: 18px;
+    margin-bottom: 8px;
+}
+
+.subtitle {
+    color: #737985;
+    margin-bottom: 25px;
+}
+
+/* FORM INPUTS */
+.form-group {
+    margin-bottom: 22px;
+}
+
+label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 8px;
+}
+
+input:not([type="radio"]) {
+    width: 100%;
+    padding: 14px;
+    border: 1px solid #DCE1EA;
+    border-radius: 9px;
+    font-size: 15px;
+    outline: none;
+}
+
+input:focus {
+    border-color: #246BFD;
+    box-shadow: 0 0 0 3px rgba(36, 107, 253, 0.12);
+}
+
+input[type="radio"] {
+    accent-color: #246BFD;
+    margin-right: 8px;
+}
+
+/* BUTTONS */
+.btn {
+    display: block;
+    width: 100%;
+    padding: 15px;
+    background: #246BFD;
+    color: white;
+    border: none;
+    border-radius: 9px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    transition: 0.2s ease;
+}
+
+.btn:hover {
+    background: #1554D1;
+    transform: translateY(-1px);
+}
+
+/* LINKS */
+a {
+    color: #246BFD;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* FOOTER */
+.footer-text {
+    text-align: center;
+    margin-top: 22px;
+    color: #737985;
+}
+
+/* MESSAGES */
+.message {
+    background: #EAF0FF;
+    color: #1554D1;
+    padding: 13px;
+    border-radius: 9px;
+    margin-bottom: 20px;
+}
+
+/* DIVIDERS */
+hr {
+    border: none;
+    border-top: 1px solid #E5E9F0;
+    margin: 25px 0;
+}
+
+/* MOBILE RESPONSIVENESS */
+@media (max-width: 500px) {
+    .form-card {
+        padding: 28px 22px;
+    }
+
+    h1 {
+        font-size: 26px;
+    }
+}
+
+/* CANDIDATE SELECTION CARDS */
+
+.candidate-card {
+    display: block;
+    padding: 20px;
+    border: 1px solid #DCE1EA;
+    border-radius: 12px;
+    margin-bottom: 16px;
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+.candidate-card:hover {
+    border-color: #246BFD;
+    background: #F5F8FF;
+}
+
+.candidate-option {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.candidate-option input[type="radio"] {
+    width: auto;
+    accent-color: #246BFD;
+}
+
+.candidate-name {
+    font-weight: 700;
+    font-size: 17px;
+}
+
+.candidate-description {
+    color: #737985;
+    margin: 8px 0 0 28px;
+}
+
+/* CANDIDATE CARDS */
+
+.candidate-card {
+    display: block;
+    padding: 20px;
+    border: 2px solid #DCE1EA;
+    border-radius: 12px;
+    margin-bottom: 16px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    background: #FFFFFF;
+}
+
+.candidate-card:hover {
+    border-color: #246BFD;
+    background: #F5F8FF;
+}
+
+.candidate-card:has(input:checked) {
+    border-color: #246BFD;
+    background: #EEF4FF;
+    box-shadow: 0 0 0 3px rgba(36, 107, 253, 0.10);
+}
+
+.candidate-option {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.candidate-option input[type="radio"] {
+    width: auto;
+    accent-color: #246BFD;
+}
+
+.candidate-name {
+    font-weight: 700;
+    font-size: 17px;
+}
+
+.candidate-description {
+    color: #737985;
+    margin: 8px 0 0 28px;
+}
+
+/* ELECTION RESULT CARDS */
+
+.result-card {
+    background: #FFFFFF;
+    border: 1px solid #DCE1EA;
+    border-radius: 12px;
+    padding: 22px;
+    margin-bottom: 18px;
+}
+
+.vote-count {
+    color: #246BFD;
+    font-size: 30px;
+    font-weight: 800;
+    margin-top: 15px;
+}
+
+.vote-count span {
+    display: block;
+    font-size: 13px;
+    color: #737985;
+    font-weight: 500;
+}
+
+/* VOTE COMPARISON BAR */
+
+.vote-bar {
+    width: 100%;
+    height: 12px;
+    background: #E8EDF5;
+    border-radius: 20px;
+    margin-top: 12px;
+    overflow: hidden;
+}
+
+.vote-bar-fill {
+    height: 100%;
+    background: #246BFD;
+    border-radius: 20px;
+    transition: width 0.4s ease;
+}
+
+/* TOTAL VOTES SUMMARY */
+
+.total-votes {
+    background: #101114;
+    color: #FFFFFF;
+    padding: 22px;
+    border-radius: 12px;
+    margin-bottom: 25px;
+}
+
+.total-votes span {
+    color: #B8C0CE;
+    font-size: 14px;
+}
+
+.total-votes h2 {
+    color: #FFFFFF;
+    font-size: 32px;
+    margin-top: 5px;
+}

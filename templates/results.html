@@ -1,0 +1,89 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Election Results | Voting Platform</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+
+<body>
+
+    <div class="page-container">
+
+        <div class="form-card">
+
+            <div class="logo">Voting Platform</div>
+
+            <h1>Election Results</h1>
+
+            <p class="subtitle">
+                View the current election results.
+            </p>
+
+           
+{% for candidate in candidates %}
+
+    <div class="result-card">
+
+        <h3>{{ candidate.name }}</h3>
+
+        <p class="candidate-description">
+            {{ candidate.description }}
+        </p>
+
+        <div class="vote-count">
+            {{ candidate.vote_count }}
+            <span>Votes received</span>
+        </div>
+        <div class="vote-bar">
+    <div
+        class="vote-bar-fill"
+        style="width: {{ (candidate.vote_count / (votes|length) * 100) if votes|length > 0 else 0 }}%;"
+    ></div>
+</div>
+
+    </div>
+
+{% endfor %}
+
+            <hr>
+
+            <h2>Individual Votes</h2>
+
+            <p class="subtitle">
+                See which candidate each vote was recorded for.
+            </p>
+            <div class="total-votes">
+    <span>Total Votes Cast</span>
+    <h2>{{ votes|length }}</h2>
+</div>
+
+            {% for vote in votes %}
+
+                <div class="form-group">
+                    <p>
+                        {{ vote.user.username }} voted for
+                        <strong>{{ vote.candidate.name }}</strong>
+                    </p>
+                </div>
+
+            {% else %}
+
+                <p class="subtitle">No votes have been recorded yet.</p>
+
+            {% endfor %}
+
+            <p class="footer-text">
+                <a href="/vote">Back to Voting</a>
+            </p>
+
+            <p class="footer-text">
+                <a href="/logout">Logout</a>
+            </p>
+
+        </div>
+
+    </div>
+
+</body>
+</html>
